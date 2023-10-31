@@ -1,3 +1,27 @@
+### Add Products
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Yerba Playadito",
+    "description": "Yerba para tomar mates por la mañana",
+    "count": 2500,
+    "inventories": [
+        {
+            "location": "Sucursal Río Ceballos",
+            "count": 1500
+        },
+        {
+            "location": "Sucursal Salsipuedes",
+            "count": 500
+        }
+    ]
+
+}
+
+### Get Product by Name
+GET http://localhost:3000/api/products/yerba%20playadito
+
 ### Get Movies
 GET http://localhost:3000/api/movies
 
