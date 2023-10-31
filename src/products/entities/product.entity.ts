@@ -6,5 +6,7 @@ export class Product {
   description: string;
   nameEncoded: string;
   price: number;
+  productType: string;
+  timeFraction: number = 0;
   inventories: Stock[];
 }

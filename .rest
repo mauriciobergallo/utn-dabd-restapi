@@ -5,7 +5,8 @@ Content-Type: application/json
 {
     "name": "Yerba Playadito",
     "description": "Yerba para tomar mates por la mañana",
-    "count": 2500,
+    "price": 1500,
+    "productType": "Producto",
     "inventories": [
         {
             "location": "Sucursal Río Ceballos",
@@ -19,8 +20,23 @@ Content-Type: application/json
 
 }
 
+### Add Service
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Hora Programación",
+    "description": "Servicio de programación por hora",
+    "price": 2500,
+    "productType": "Servicio",
+    "timeFraction": 60
+}
+
 ### Get Product by Name
 GET http://localhost:3000/api/products/yerba%20playadito
+
+### Get Service by Name
+GET http://localhost:3000/api/products/hora%20programaci%C3%B3n
 
 ### Get Movies
 GET http://localhost:3000/api/movies

@@ -4,5 +4,7 @@ export class CreateProductDto {
   name: string;
   description: string;
   price: number;
+  productType: string;
+  timeFraction: number = 0;
   inventories: CreateStockDto[];
 }

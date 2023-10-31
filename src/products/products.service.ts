@@ -22,18 +22,25 @@ export class ProductsService {
     newProduct.description = createProductDto.description;
 
     newProduct.inventories = [];
-    let maxInventoryId = 0;
 
-    for (let i = 0; i < createProductDto.inventories.length; i++) {
-      maxInventoryId++;
+    newProduct.productType = createProductDto.productType.trim();
 
-      const inventory = createProductDto.inventories[i];
-      const newInventory: Stock = new Stock();
-      newInventory.id = maxInventoryId;
-      newInventory.location = inventory.location;
-      newInventory.count = inventory.count;
+    if (newProduct.productType === 'Producto') {
+      let maxInventoryId = 0;
 
-      newProduct.inventories.push(newInventory);
+      for (let i = 0; i < createProductDto.inventories.length; i++) {
+        maxInventoryId++;
+
+        const inventory = createProductDto.inventories[i];
+        const newInventory: Stock = new Stock();
+        newInventory.id = maxInventoryId;
+        newInventory.location = inventory.location;
+        newInventory.count = inventory.count;
+
+        newProduct.inventories.push(newInventory);
+      }
+    } else {
+      newProduct.timeFraction = createProductDto.timeFraction;
     }
 
     this._products.push(newProduct);
